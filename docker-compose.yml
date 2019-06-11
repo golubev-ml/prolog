@@ -3,5 +3,9 @@ services:
   prolog:
     image: ubuntu1604py36
     container_name: prolog
-    ports:
-      - '0.0.0.0:8000:8000'    
+  tests:
+    image: ubuntu1604py36
+    container_name: tests
+    depends_on:
+      - "prolog"
+    command: ["./wait-for-prolog-and-test.sh"]
