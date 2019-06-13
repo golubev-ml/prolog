@@ -7,5 +7,5 @@ while ! nc -z prolog 8000; do
 done
 
 echo "Prolog is ready, start test"
-pytest
+mutmut run
 
